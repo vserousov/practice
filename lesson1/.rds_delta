@@ -1,10 +1,9 @@
 #delete
 #add
-res/wgt/images/brand.gif
-res/wgt/index2.html
+res/wgt/video/
+res/wgt/video/_TouchCube.mp4
 #modify
 res/wgt/author-signature.xml
 res/wgt/signature1.xml
-res/wgt/css/style.css
 res/wgt/index.html
 res/wgt/js/main.js

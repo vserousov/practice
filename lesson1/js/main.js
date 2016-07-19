@@ -1,24 +1,28 @@
-var startTime;
-var checkTime;
+( function () {
+    window.addEventListener( 'tizenhwkey', function( ev ) {
+        if( ev.keyName === "back" ) {
+            var activePopup = document.querySelector( '.ui-popup-active' ),
+                page = document.getElementsByClassName( 'ui-page-active' )[0],
+                pageid = page ? page.id : "";
 
-//Initialize function
-var init = function () {
-	// TODO:: Do your initialization job
-	console.log("init() called");
+            if( pageid === "one" && !activePopup ) {
+                try {
+                    tizen.application.getCurrentApplication().exit();
+                } catch (ignore) {
+                }
+            } else {
+                window.history.back();
+            }
+        }
+    } );
+    
 
-	// add eventListener for tizenhwkey
-	document.addEventListener('tizenhwkey', function(e) {
-		if(e.keyName == "back") {
-			try {
-				tizen.application.getCurrentApplication().exit();
-			} catch (error) {
-				console.error("getCurrentApplication(): " + error.message);
-			}
-		}
-	});
-};
-// window.onload can work without <body onload="">
-window.onload = init;
+	$("#t1").css("color", "red");
+	$("#t2").css("color", "yellow");
+	$("#t3").css("color", "green");
+	$("#t4").css("color", "white");
+} () );
+
 
 function startTime() {
 	var today = new Date();
