@@ -60,6 +60,7 @@
 
 					<ul class="ui-listview">
 						<li class="ui-li-anchor"><a href="#two">Show page "two"</a></li>
+						<li class="ui-li-anchor"><a href="#three">Show page "three"</a></li>
 					</ul>
 				</section>
 			</article>
@@ -103,7 +104,55 @@
 		</div>
 		<!-- /content -->
 	</div>
-	<!-- /page three -->
+	<!-- /page two -->
+
+
+	<!-- Start of second page: #three -->
+	<div class="ui-page" id="three">
+		<div class="ui-header">
+			<h1>Canvas</h1>
+		</div>
+		<!-- /header -->
+
+		<div class="ui-content">
+			<p>
+			<canvas id='draw' width='240' height='180' style='border:1px solid;'></canvas> 
+<script type='text/javascript'>
+var canvas=document.getElementById("draw")
+var x=canvas.getContext("2d");
+x.font = 'italic 40pt Tahoma';
+x.fillText("Tizen", 15, 40); 
+
+x.fillStyle = "blue";
+x.fillText("JavaScript", 15, 80); 
+x.fillStyle = "red";
+x.fillText("HTML5", 10, 140);
+x.fillStyle = "blue";
+x.fillText("canvas", 75, 155);
+</script>
+
+		<canvas id="check" width="250" height="250"></canvas>
+		<script>
+		var c=document.getElementById("check");
+		var ctx=c.getContext("2d");
+
+		var white = true;
+
+		for (var i = 0; i < 8; i++) {
+			for (var j = 0; j < 8; j++) {
+				ctx.fillStyle = white ? "white" : "black";
+				ctx.fillRect(20 * j, 20 * i, 20, 20);
+				if (j < 7)
+					white = !white;
+			}
+		}
+
+		</script>
+			</p>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page two -->
 
 	<script type="text/javascript" src="./lib/tau/mobile/js/tau.js"></script>
 
